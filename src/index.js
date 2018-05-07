@@ -1,5 +1,6 @@
 import { h, render } from 'preact'
 import Home from './components/Home'
+import Area from './components/Area'
 import NotFound from './components/NotFound'
 import Router from 'preact-router'
 import AsyncRoute from 'preact-async-route'
@@ -11,6 +12,7 @@ init()
 const App = () => (
 	<Router>
 		<Home path="/" />
+		<Area path="/area/:q" />
 		<NotFound default />
 	</Router>
 )

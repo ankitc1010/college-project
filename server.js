@@ -3,7 +3,7 @@ const path = require('path')
 const compression = require('compression')
 const userRouter = require('./routers/userRouter')
 const companyRouter = require('./routers/companyRouter')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 var app = express()
 
