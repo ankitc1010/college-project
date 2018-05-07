@@ -5,7 +5,8 @@ class Home extends Component {
 	state = {
 		areaName: 'Indira Nagar'
 	}
-	submitArea = () => {
+	submitArea = e => {
+		e.preventDefault()
 		route('/area/' + this.state.areaName)
 	}
 	changeArea = e => {
