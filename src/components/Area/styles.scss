@@ -1,0 +1,25 @@
+.axis {
+	line {
+		fill: none;
+		stroke: #000;
+		shape-rendering: crispEdges;
+	}
+	path {
+		fill: none;
+		stroke: #000;
+		shape-rendering: crispEdges;
+	}
+}
+.dot {
+	stroke: #000;
+}
+#plotly {
+	height: 400px;
+	width: 300px;
+}
+.score {
+	padding: 23px 59px;
+	color: #6161d8;
+	border: 1px solid #8d8de4;
+	border-radius: 48px;
+}

@@ -24,7 +24,7 @@ class Home extends Component {
 						<div class="input-div">
 							<select id="input-hash" onChange={this.changeArea}>
 								<option value="Indira Nagar">Indira Nagar</option>
-								<option value="Kumarswamy Layout">Kumarswamy Layout</option>
+								<option value="Banashankari">Banashankari</option>
 							</select>
 						</div>
 						<div class="button">

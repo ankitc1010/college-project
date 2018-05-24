@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const workboxPlugin = require('workbox-webpack-plugin')
 const VENDOR_LIB = ['preact']
 const paths = ['dist']
@@ -33,7 +34,7 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.(jpe?g|png|gif|svg)$/,
+				test: /\.(jpe?g|png|gif|svg|tsv|csv)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -46,9 +47,13 @@ module.exports = {
 			}
 		]
 	},
+	node: {
+		fs: 'empty'
+	},
 	devServer: {
 		proxy: {
-			'/api': 'http://localhost:4000'
+			'/api': 'http://localhost:4000',
+			'/api/area': 'http://localhost:4000/'
 		},
 		publicPath: '/',
 		historyApiFallback: true,
@@ -68,6 +73,10 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(paths),
+		new UglifyJsPlugin({
+			// ...
+			uglifyOptions: { compress: { unused: false } }
+		}),
 		new ExtractTextPlugin('css/styles.css'),
 		new HtmlWebpackPlugin({
 			template: './public/index.html',
